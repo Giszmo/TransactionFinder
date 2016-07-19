@@ -1,0 +1,20 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile(
+            'com.baqend:bloom-filter:1.0.7'
+    )
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'org.bitcoinj:bitcoinj-core:0.14.3'
+}
+
+idea {
+    module {
+        jdkName = '1.8'
+    }
+}
