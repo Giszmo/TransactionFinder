@@ -1,0 +1,19 @@
+syntax = "proto2";
+package transactionfinder;
+
+option java_package = "com.mycelium.transactionfinder";
+option java_outer_classname = "TransactionFinderProtos";
+
+message BlockBloomFilterList {
+    enum HashMethod {
+        MD5 = 0;
+    }
+    message BlockBloomFilter {
+        required bytes blockHash = 1;
+        required int32 size = 2;
+        required int32 hashes = 3;
+        required HashMethod hashMethod = 4;
+        required bytes bits = 5;
+    }
+    repeated BlockBloomFilter filters = 6;
+}
